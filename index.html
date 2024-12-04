@@ -389,7 +389,7 @@
 
     		<div class="row justify-content-center mt-5">
     			<div class="col-md-6 text-center ftco-animate">
-    				<p><a href="#" class="btn btn-primary py-4 px-5">Download CV</a></p>
+    				<p><a onclick="openAndDownloadPDF()" class="btn btn-primary py-4 px-5">Download CV</a></p>
     			</div>
     		</div>
     	</div>
@@ -729,7 +729,18 @@
   <!-- loader -->
   <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
 
+  <script>
+	function openAndDownloadPDF() {
+		// Open the PDF in a new browser tab
+		window.open('images/resume.pdf', '_blank');
 
+		// Trigger download of the same PDF
+		const link = document.createElement('a');
+		link.href = 'images/resume.pdf';
+		link.download = 'your-pdf-file-name.pdf'; // Optional: Set the downloaded filename
+		link.click();
+	}
+</script>
   <script src="js/jquery.min.js"></script>
   <script src="js/jquery-migrate-3.0.1.min.js"></script>
   <script src="js/popper.min.js"></script>
